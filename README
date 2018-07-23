@@ -20,3 +20,29 @@ they/them/theirs/themselves, etc.) to set the correct pronouns for pronoun.
 
 Call pronoun.insert(string) method with an appropriately marked string to insert
 the correct pronouns into the string.
+
+EXAMPLE CODE:
+
+import pronouns
+
+malePronoun = pronouns.Pronoun()
+xePronoun = pronouns.Pronoun()
+
+malePronoun.set("He", "Him", "His", "Himself")
+xePronoun.set("Xe", "Hir", "Hirs", "Hirself")
+
+markedString = "~1 is hungry. I gave ~2 a burger. ~3 dog ate the burger \
+instead! ~1 was sad because that burger was ~4. ~1 decided to make a burger ~5."
+
+maleString = malePronoun.insert(markedString)
+xeString = xePronoun.insert(markedString)
+
+print(maleString + "\n")
+print(xeString)
+
+RESULTS IN:
+He is hungry. I gave him a burger. His dog ate the burger instead! He was sad
+because that burger was his. He decided to make a burger himself.
+
+Xe is hungry. I gave hir a burger. Hir dog ate the burger instead! Xe was sad
+because that burger was hirs. Xe decided to make a burger hirself.
