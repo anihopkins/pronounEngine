@@ -1,0 +1,22 @@
+Author: Ani Hopkins
+
+Purpose: This file implements a "Pronoun" class that inserts the correct
+pronouns into strings marked for pronoun insertion.
+
+Usage: To mark a string for pronoun insertion, use:
+	~1 to indicate the location of a subject (He/She/They/Xe)
+	~2 to indicate the location of an object (Him/Her/Them/Hir)
+	~3 to indicate the location of a possessive adjective (His/Her/Their/
+	Hir)
+	~4 to indicate the location of a possessive pronoun (His/Hers/Theirs
+	/Hirs)
+	~5 to indicate the location of a reflexive pronoun (Himself/Herself/
+	Themselves/Hirself).
+
+Call Pronoun() to instantiate a new Pronoun object.
+
+Call pronoun.set(subject, object, possessive, reflexive) (ie. she/her/hers/herself or
+they/them/theirs/themselves, etc.) to set the correct pronouns for pronoun.
+
+Call pronoun.insert(string) method with an appropriately marked string to insert
+the correct pronouns into the string.
