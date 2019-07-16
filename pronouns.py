@@ -27,6 +27,7 @@ class Pronoun:
 	def __init__(self):
 		self.pronouns = {"subject":"", "object":"", "possessiveAdjective":"",
 						"possessivePronoun":"", "reflexive":""}
+
 		self.markers = {"~1":"subject", "~2":"object",
 						"~3":"possessiveAdjective", "~4":"possessivePronoun",
 						"~5":"reflexive"}
@@ -51,9 +52,9 @@ class Pronoun:
 		if (possessive == None):
 			self.pronouns["possessiveAdjective"] = "their"
 			self.pronouns["possessivePronoun"] = "theirs"
-		elif (possessive.lower() == "his"):
-			self.pronouns["possessiveAdjective"] = "his"
-			self.pronouns["possessivePronoun"] = "his"
+		elif (possessive.lower() == "his" or possessive.lower() == "its"):
+			self.pronouns["possessiveAdjective"] = possessive
+			self.pronouns["possessivePronoun"] = possessive
 		else:
 			self.pronouns["possessiveAdjective"] = possessive[:-1].lower()
 			self.pronouns["possessivePronoun"] = possessive.lower()
@@ -96,5 +97,3 @@ class Pronoun:
 			if strippedString.rfind(punct, 0, strippedString.find(marker)) == \
 				strippedString.find(marker) - 1:
 				return True
-
-		# return string.find(marker) == 0
