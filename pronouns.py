@@ -73,6 +73,18 @@ class Pronoun:
 				string = self._pronounInsert(string, marker)
 		return string
 
+	# Produces a printable string for str()
+	def __str__(self):
+		pronounString = self.pronouns["subject"].capitalize() + "/" + \
+						self.pronouns["possessiveAdjective"].capitalize()
+		return pronounString
+
+	# Produces a printable string for repr()
+	def __repr__(self):
+		pronounString = self.pronouns["subject"].capitalize() + "/" + \
+						self.pronouns["possessiveAdjective"].capitalize()
+		return pronounString
+
 #--------------------------[PRIVATE FUNCTIONS]---------------------------
 
 	# Replace a single pronoun marker by the correct pronoun
