@@ -32,6 +32,12 @@ class Pronoun:
 						"~3":"possessiveAdjective", "~4":"possessivePronoun",
 						"~5":"reflexive"}
 
+	# Prints a Pronoun object
+	def __str__(self):
+		pronounString = self.pronouns["subject"].capitalize() + "/" + \
+						self.pronouns["possessiveAdjective"].capitalize()
+		return pronounString
+
 	# Set the pronouns for this Pronoun object. Defaults to they/them/theirs
 	def set(self, subject = None, object = None, possessive = None,
 			reflexive = None):
